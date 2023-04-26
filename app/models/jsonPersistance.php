@@ -18,18 +18,18 @@
     }
 
     function getOneTask($id){
-      $task = new Task();
       $position=0;
       $search=false;
 
       do{
-        if($this->jsonArray[$position]->id == $id){
-          $task = $this->jsonArray[$position];
+        if($id == $this->jsonArray[$position]['id']){
           $search = true;
+          return $this->jsonArray[$position];
         }
+        $position++;
       }while($search == false || ($position == count($this->jsonArray)-1));
-
-      return $task;
+      
+      return null;
     }
 
     function addTask(Task $task){

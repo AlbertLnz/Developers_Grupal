@@ -13,8 +13,12 @@ class ApplicationController extends Controller
     $this->persistenciaJson = new jsonPersistance();
   }
 
-	public function indexAction()
-	{
+	public function indexAction(){
 		$this->view->allTasks = $this->persistenciaJson->getAllTasks();
 	}
+
+  public function viewOneTaskAction(){
+    $this->view->oneTask = $this->persistenciaJson->getOneTask($_POST['task']);
+  }
+
 }

@@ -24,18 +24,18 @@
           <td>
             <div class="flex grid justify-center">
               <div class="flex">
-                <form action="../app/views/layouts/view.php" method="POST">
-                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                <form action="viewTask" method="POST">
+                  <input type="hidden" name="task" value="<?php echo $task['id']?>">
                   <button class="bg-lime-300 border rounded py-1 px-2 mx-2 hover:underline">View</button>
                 </form>
               <div class="flex">
                 <form action="../app/views/layouts/edit.php" method="POST">
-                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                  <input type="hidden" name="task" value="<?php print_r($task)?>">
                   <button class="bg-orange-300 border rounded py-1 px-2 mx-2 hover:underline">Edit</button>
                 </form>
               <div class="flex">
                 <form action="../app/views/layouts/delete.php" method="POST">
-                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                  <input type="hidden" name="task" value="<?php print_r($task)?>">
                   <button class="bg-red-300 border rounded py-1 px-2 mx-2 hover:underline">Delete</button>
                 </form>
               </div>
