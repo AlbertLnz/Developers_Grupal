@@ -8,8 +8,8 @@
     private Array $numTasksEliminate = array();
 
     function __construct(){
-      if(file_exists(dirname(__DIR__).'\..\web\json\task_table.json')){
-        $this->jsonArray = json_decode(file_get_contents(dirname(__DIR__).'\..\web\json\task_table.json'), true);
+      if(file_exists(dirname(__DIR__).'\..\web\json\jsonTasks.json')){
+        $this->jsonArray = json_decode(file_get_contents(dirname(__DIR__).'\..\web\json\jsonTasks.json'), true);
       }
     }
 
@@ -46,11 +46,12 @@
     function eliminateTask(Task $task){
       $numTasksEliminate = array_push($numTasksEliminate, "1");
       unset($this->jsonArray[$task]);
+      $this->putJson($this->jsonArray);
       return $numTasksEliminate;
     }
 
     function putJson($tasks){
-      file_put_contents(dirname(__DIR__).'\..\web\json\task_table.json', json_encode($tasks, JSON_PRETTY_PRINT));
+      file_put_contents(dirname(__DIR__).'\..\web\json\jsonTasks.json', json_encode($tasks, JSON_PRETTY_PRINT));
     }
   }
 
