@@ -1,0 +1,51 @@
+<?php include dirname(__DIR__).'\..\layouts\header.php';?>
+
+<table class="w-full my-12 border border-gray-400 border-separate border-spacing-y-5 border-spacing-x-2">
+
+    <thead class="bg-blue-300">
+      <tr>
+        <th>User</th>
+        <th>Task Description</th>
+        <th>Status</th>
+        <th>Starter Date</th>
+        <th>Finished Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody class="text-center">
+      <?php foreach ($this->allTasks as $task): ?>
+        <tr>
+          <td><?php echo $task['user']?></td>
+          <td><?php echo $task['taskDescription']?></td>
+          <td><?php echo $task['status']?></td>
+          <td><?php echo $task['starterDate']?></td>
+          <td><?php echo $task['finishedDate']?></td>
+          <td>
+            <div class="flex grid justify-center">
+              <div class="flex">
+                <form action="../app/views/layouts/view.php" method="POST">
+                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                  <button class="bg-lime-300 border rounded py-1 px-2 mx-2 hover:underline">View</button>
+                </form>
+              <div class="flex">
+                <form action="../app/views/layouts/edit.php" method="POST">
+                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                  <button class="bg-orange-300 border rounded py-1 px-2 mx-2 hover:underline">Edit</button>
+                </form>
+              <div class="flex">
+                <form action="../app/views/layouts/delete.php" method="POST">
+                  <input type="hidden" name="user" value="<?php print_r($task)?>">
+                  <button class="bg-red-300 border rounded py-1 px-2 mx-2 hover:underline">Delete</button>
+                </form>
+              </div>
+            </div>
+          </td>
+        </tr>
+       <?php endforeach;?> 
+  
+    </tbody>
+
+  </table>
+
+<?php include dirname(__DIR__).'\..\layouts\footer.php';?>

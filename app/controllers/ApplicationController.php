@@ -7,4 +7,8 @@
 class ApplicationController extends Controller 
 {
 	
+	public function indexAction()
+	{
+		$this->view->allTasks = new jsonPersistance();
+	}
 }
