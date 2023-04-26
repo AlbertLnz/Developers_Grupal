@@ -1,0 +1,38 @@
+[ 
+    { 
+    "id": 1,
+    "username": "Juan Perez",
+    "status": "Pending",
+    "starterDate": "20/03/2022",
+    "finalDate": "20/04/2023"
+    },
+    {
+    "id": 2,
+    "username": "Maria Jerez",
+    "status": "Executing",
+    "starterDate": "10/05/2022",
+    "finalDate": "20/04/2023"
+    },
+    {
+    "id": 3,
+    "username": "Joan Coll",
+    "status": "Finished",
+    "starterDate": "07/12/2022",
+    "finalDate": "17/08/2023"
+    },
+    {
+    "id": 4,
+    "username": "Anabela Moritz",
+    "status": "Pending",
+    "starterDate": "11/11/2022",
+    "finalDate": "15/09/2023"
+    },
+    {
+    "id": 5,
+    "username": "Esteban Xibeca",
+    "status": "Pending",
+    "starterDate": "19/07/2022",
+    "finalDate": "30/11/2023"
+    }
+
+]
