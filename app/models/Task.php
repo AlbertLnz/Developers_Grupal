@@ -4,6 +4,7 @@
 
     public $id;
     protected $username;
+    protected $taskDescription;
     protected $status;
     protected $starterDate;
     protected $finalDate;
@@ -14,6 +15,9 @@
     }
     protected function getUsername(){
       return $this->username;
+    }
+    protected function getTaskDescription(){
+      return $this->taskDescription;
     }
     protected function getStatus(){
       return $this->status;
@@ -28,6 +32,9 @@
     //SETTER'S
     public function setUsername($username){
       $this->username = $username;
+    }
+    public function setTaskDescription($taskDescription){
+      $this->taskDescription = $taskDescription;
     }
     protected function setStatus($status){
       $this->status = $status;

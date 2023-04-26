@@ -4,7 +4,7 @@
 
     <thead class="bg-blue-300">
       <tr>
-        <th>User</th>
+        <th>Username</th>
         <th>Task Description</th>
         <th>Status</th>
         <th>Starter Date</th>
@@ -16,11 +16,11 @@
     <tbody class="text-center">
       <?php foreach ($this->allTasks as $task): ?>
         <tr>
-          <td><?php echo $task['user']?></td>
+          <td><?php echo $task['username']?></td>
           <td><?php echo $task['taskDescription']?></td>
           <td><?php echo $task['status']?></td>
           <td><?php echo $task['starterDate']?></td>
-          <td><?php echo $task['finishedDate']?></td>
+          <td><?php echo $task['finalDate']?></td>
           <td>
             <div class="flex grid justify-center">
               <div class="flex">
