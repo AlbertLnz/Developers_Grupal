@@ -18,29 +18,16 @@
     }
 
     function getOneTask($id){ //busqueda por id
-      $position=0;
-      $search=false;
-
-      do{
-        if($id == $this->jsonArray[$position]['id']){
-          $search = true;
-          return $this->jsonArray[$position];
-        }
-        $position++;
-      }while($search == false || ($position == count($this->jsonArray)-1));
-      
-      return null;
+      return $this->jsonArray[$this->searchTaskPosition($id)];
     }
 
     function updateOneTask(Array $task):void{ //busqueda por posicion de la tarea
 
-      $taskOriginalPosition = array_search($this->getOneTask($task[0])['id'], $this->jsonArray);
-
-      $this->jsonArray[$taskOriginalPosition]['username'] = $task[1];
-      $this->jsonArray[$taskOriginalPosition]['taskDescription'] = $task[2];
-      $this->jsonArray[$taskOriginalPosition]['status'] = $task[3];
-      $this->jsonArray[$taskOriginalPosition]['starterDate'] = $task[4];
-      $this->jsonArray[$taskOriginalPosition]['finalDate'] = $task[5];
+      $this->jsonArray[$this->searchTaskPosition($task[0])]['username'] = $task[1];
+      $this->jsonArray[$this->searchTaskPosition($task[0])]['taskDescription'] = $task[2];
+      $this->jsonArray[$this->searchTaskPosition($task[0])]['status'] = $task[3];
+      $this->jsonArray[$this->searchTaskPosition($task[0])]['starterDate'] = $task[4];
+      $this->jsonArray[$this->searchTaskPosition($task[0])]['finalDate'] = $task[5];
 
       $this->putJson($this->jsonArray);
     }
@@ -61,6 +48,21 @@
       unset($this->jsonArray[$task]);
       $this->putJson($this->jsonArray);
       return $numTasksEliminate;
+    }
+
+    function searchTaskPosition($id){
+      $position=0;
+      $search=false;
+
+      do{
+        if($id == $this->jsonArray[$position]['id']){
+          $search = true;
+          return $position;
+        }
+        $position++;
+      }while($search == false || ($position == count($this->jsonArray)-1));
+
+      return $position;
     }
 
     function putJson($tasks){
