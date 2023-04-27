@@ -35,4 +35,9 @@ class ApplicationController extends Controller
     header ("Location: ".WEB_ROOT."/");
   }
 
+  public function addOneTaskAction(){
+    $this->persistenciaJson->addOneTask();
+    header ("Location: ".WEB_ROOT."/");
+  }
+
 }

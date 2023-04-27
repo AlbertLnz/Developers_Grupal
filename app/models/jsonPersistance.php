@@ -32,9 +32,9 @@
       $this->putJson($this->jsonArray);
     }
 
-    function addTask(Task $task){
-      $task->id = $this->asignId(); //public id (meh...)
-      array_push($this->jsonArray, $task);
+    function addOneTask(){
+      $task = array("id" => $this->asignId(), "username" => " ", "taskDescription" => " ", "status" => " ", "starterDate" => " ", "finalDate" => " ");
+      $this->jsonArray[] = $task;
       $this->putJson($this->jsonArray);
     }
 
@@ -49,7 +49,7 @@
     }
 
     function asignId(){
-      $numTasksHistory = count(array_merge($this->jsonArray, $this->numTasksEliminate));
+      $numTasksHistory = count(array_merge($this->jsonArray, array_map('intval', str_split($this->numTasksEliminate))));
       return $numTasksHistory;
     }
 

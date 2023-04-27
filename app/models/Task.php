@@ -2,7 +2,7 @@
 
   class Task{
 
-    public $id;
+    protected $id;
     protected $username;
     protected $taskDescription;
     protected $status;
@@ -30,6 +30,9 @@
     }
 
     //SETTER'S
+    public function setId($id){
+      $this->id = $id;
+    }
     public function setUsername($username){
       $this->username = $username;
     }
