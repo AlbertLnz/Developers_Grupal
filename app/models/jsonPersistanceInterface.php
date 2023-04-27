@@ -7,6 +7,7 @@ interface jsonPersistanceInterface{
     public function addTask(Task $task);
     public function asignId();
     public function eliminateTask(Task $task);
+    public function searchTaskPosition($id);
     public function putJson($tasks);
 }
 
