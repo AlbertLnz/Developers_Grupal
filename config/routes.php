@@ -12,5 +12,7 @@
 $routes = array(
 	'/test' => 'test#index',
 	'/' => 'application#index', //home page
-	'/viewTask' => 'application#viewOneTask'
+	'/viewTask' => 'application#viewOneTask',
+	'/editTask' => 'application#editOneTask',
+	'/updateTask' => 'application#updateOneTask'
 );

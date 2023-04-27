@@ -1,0 +1,33 @@
+<?php include dirname(__DIR__).'\..\layouts\header.php';?>
+
+
+<?php 
+/*yo te daré la tarea que en el index.phtml picas
+Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actualizar a la DB*/
+?>
+
+
+<form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
+  <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
+
+  <label for="">Username:</label>
+  <input type="text" name="task[]" value="<?php echo $this->oneTask['username']?>"><br>
+  
+  <label for="">Task Description:</label>
+  <input type="text" name="task[]" value="<?php echo $this->oneTask['taskDescription']?>"><br>
+  
+  <label for="">Status:</label>
+  <input type="text" name="task[]" value="<?php echo $this->oneTask['status']?>"><br>
+
+  <label for="">Starter Date:</label>
+  <input type="text" name="task[]" value="<?php echo $this->oneTask['starterDate']?>"><br>
+
+  <label for="">Final Date:</label>
+  <input type="text" name="task[]" value="<?php echo $this->oneTask['finalDate']?>">
+
+  <button type="submit">Enviar</button>
+
+</form>
+
+
+<?php include dirname(__DIR__).'\..\layouts\footer.php';?>

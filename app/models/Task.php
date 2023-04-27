@@ -36,13 +36,13 @@
     public function setTaskDescription($taskDescription){
       $this->taskDescription = $taskDescription;
     }
-    protected function setStatus($status){
+    public function setStatus($status){
       $this->status = $status;
     }
-    protected function setStarterDate($starterDate){
+    public function setStarterDate($starterDate){
       $this->starterDate = $starterDate;
     }
-    protected function setFinalDate($finalDate){
+    public function setFinalDate($finalDate){
       $this->finalDate = $finalDate;
     }
   }

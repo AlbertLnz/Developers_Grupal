@@ -21,4 +21,13 @@ class ApplicationController extends Controller
     $this->view->oneTask = $this->persistenciaJson->getOneTask($_POST['task']);
   }
 
+  public function editOneTaskAction(){
+    $this->view->oneTask = $this->persistenciaJson->getOneTask($_POST['task']);
+  }
+
+  public function updateOneTaskAction(){
+    $this->persistenciaJson->updateOneTask($_POST['task']);
+    header ("Location: ".WEB_ROOT."/");
+  }
+
 }

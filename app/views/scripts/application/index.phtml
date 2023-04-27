@@ -29,8 +29,8 @@
                   <button class="bg-lime-300 border rounded py-1 px-2 mx-2 hover:underline">View</button>
                 </form>
               <div class="flex">
-                <form action="../app/views/layouts/edit.php" method="POST">
-                  <input type="hidden" name="task" value="<?php print_r($task)?>">
+                <form action="editTask" method="POST">
+                  <input type="hidden" name="task" value="<?php echo $task['id']?>">
                   <button class="bg-orange-300 border rounded py-1 px-2 mx-2 hover:underline">Edit</button>
                 </form>
               <div class="flex">
