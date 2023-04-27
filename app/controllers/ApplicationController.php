@@ -30,4 +30,9 @@ class ApplicationController extends Controller
     header ("Location: ".WEB_ROOT."/");
   }
 
+  public function deleteOneTaskAction(){
+    $this->persistenciaJson->deleteOneTask($_POST['task']);
+    header ("Location: ".WEB_ROOT."/");
+  }
+
 }

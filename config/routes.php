@@ -14,5 +14,6 @@ $routes = array(
 	'/' => 'application#index', //home page
 	'/viewTask' => 'application#viewOneTask',
 	'/editTask' => 'application#editOneTask',
-	'/updateTask' => 'application#updateOneTask'
+	'/updateTask' => 'application#updateOneTask',
+	'/deleteTask' => 'application#deleteOneTask'
 );

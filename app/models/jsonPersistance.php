@@ -5,7 +5,7 @@
   class jsonPersistance implements jsonPersistanceInterface{
 
     protected Array $jsonArray = array();
-    private Array $numTasksEliminate = array();
+    private $numTasksEliminate = 0;
 
     function __construct(){
       if(file_exists(dirname(__DIR__).'\..\web\json\jsonTasks.json')){
@@ -38,16 +38,19 @@
       $this->putJson($this->jsonArray);
     }
 
+    function deleteOneTask($id){
+      $this->numTasksEliminate += 1;
+
+      $originalPositionInArray = $this->searchTaskPosition($id);
+
+      unset($this->jsonArray[$originalPositionInArray]);
+      $this->jsonArray = array_values($this->jsonArray); //reordena los indices
+      $this->putJson($this->jsonArray);
+    }
+
     function asignId(){
       $numTasksHistory = count(array_merge($this->jsonArray, $this->numTasksEliminate));
       return $numTasksHistory;
-    }
-
-    function eliminateTask(Task $task){
-      $numTasksEliminate = array_push($numTasksEliminate, "1");
-      unset($this->jsonArray[$task]);
-      $this->putJson($this->jsonArray);
-      return $numTasksEliminate;
     }
 
     function searchTaskPosition($id){
