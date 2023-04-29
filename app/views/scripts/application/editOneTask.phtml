@@ -6,28 +6,35 @@
 Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actualizar a la DB*/
 ?>
 
-
-<form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
-  <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
-
-  <label for="">Username:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['username']?>"><br>
-  
-  <label for="">Task Description:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['taskDescription']?>"><br>
-  
-  <label for="">Status:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['status']?>"><br>
-
-  <label for="">Starter Date:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['starterDate']?>"><br>
-
-  <label for="">Final Date:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['finalDate']?>">
-
-  <button type="submit">Enviar</button>
-
-</form>
+<div class="container my-24 px-6 mx-auto">
+  Editar la informacion de: <div class="text-6xl font-bold my-2" ><?php echo $this->oneTask['username']?></div>
+  <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 
 
+    <form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
+      <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
+
+      <table class="table-auto">
+        <label class="w-1/2 font-bold p-2" for="">Username:</label>
+        <input class="w-1/2  p-2" type="text" name="task[]" value="<?php echo $this->oneTask['username']?>"><br>
+        
+        <label class="w-1/2 font-bold p-2" for="">Task Description:</label>
+        <input type="text" name="task[]" value="<?php echo $this->oneTask['taskDescription']?>"><br>
+        
+        <label class="w-1/2 font-bold p-2" for="">Status:</label>
+        <input type="text" name="task[]" value="<?php echo $this->oneTask['status']?>"><br>
+
+        <label class="w-1/2 font-bold p-2" for="">Starter Date:</label>
+        <input type="text" name="task[]" value="<?php echo $this->oneTask['starterDate']?>"><br>
+
+        <label class="w-1/2 font-bold p-2" for="">Final Date:</label>
+        <input type="text" name="task[]" value="<?php echo $this->oneTask['finalDate']?>">
+
+        <button type="submit">Enviar</button>
+      </table>
+
+    </form>
+
+  </div> 
+</div>
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>

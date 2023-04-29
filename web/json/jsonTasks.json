@@ -3,7 +3,7 @@
         "id": 1,
         "username": "Juan Perez",
         "taskDescription": "Do the Developers!",
-        "status": "Pending",
+        "status": "executed",
         "starterDate": "20\/03\/2022",
         "finalDate": "20\/04\/2023"
     },
