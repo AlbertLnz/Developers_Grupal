@@ -1,15 +1,15 @@
 [
     {
         "id": 1,
-        "username": "Juan Perez",
+        "username": "Rebecca Hoffmann",
         "taskDescription": "Do the Developers!",
-        "status": "executed",
-        "starterDate": "20\/03\/2022",
-        "finalDate": "20\/04\/2023"
+        "status": "pending",
+        "starterDate": "09\/11\/2023",
+        "finalDate": "09\/12\/2023"
     },
     {
         "id": 2,
-        "username": "Maria Jerezo",
+        "username": "Maria Jere",
         "taskDescription": "Buy bread",
         "status": "Executing",
         "starterDate": "10\/05\/2022",
@@ -30,13 +30,5 @@
         "status": "Pending",
         "starterDate": "11\/11\/2022",
         "finalDate": "15\/09\/2023"
-    },
-    {
-        "id": 5,
-        "username": "Esteban Xibeca",
-        "taskDescription": "Do homework",
-        "status": "Pending",
-        "starterDate": "19\/07\/2022",
-        "finalDate": "30\/11\/2023"
     }
 ]

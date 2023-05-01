@@ -10,7 +10,7 @@
 </head>
 <body class="bg-white-300">
   
-  <div class="container my-24 px-6 mx-auto">
+  <div class="container my-12 px-6 mx-auto">
 
 
   <section class="mb-32 text-gray-800 text-center lg:text-left background-radial-gradient">

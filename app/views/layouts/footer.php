@@ -1,3 +1,4 @@
+<div class="container my-12 px-6 mx-auto">
   <footer
     class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
     <div
@@ -99,27 +100,19 @@
             </svg>
             + 34 932 91 76 10
           </p>
-          <p class="mb-4 flex items-center justify-center md:justify-start">
-           <div class="relative w-full h-96">
-              <iframe class="absolute top-0 left-0 w-full h-full"
-             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
-             frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-            </iframe>
-          </div>
-         </p>
+          
         </div>
       </div>
     </div>
-
-    <!--Copyright section-->
     <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
       <span>© 2023 Copyright:</span>
       <a
         class="font-semibold text-neutral-600 dark:text-neutral-400"
         href="https://tailwind-elements.com/"
-        >Tailwind Elements</a
+        >Cibernarium - Barcelona Activa</a
       >
     </div>
   </footer>
+</div>
 </body>
 </html>

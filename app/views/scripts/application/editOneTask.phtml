@@ -1,40 +1,50 @@
 <?php include dirname(__DIR__).'\..\layouts\header.php';?>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
 <?php 
 /*yo te daré la tarea que en el index.phtml picas
 Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actualizar a la DB*/
 ?>
 
 <div class="container my-24 px-6 mx-auto">
-  Editar la informacion de: <div class="text-6xl font-bold my-2" ><?php echo $this->oneTask['username']?></div>
-  <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+  <div class="w-full p-4 text-left bg-gray border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    Editar la informacion de: <div class="text-6xl font-bold my-2" ><?php echo $this->oneTask['username']?>
+  </div>
+  <div class="w-full p-4 text-left bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 
 
     <form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
       <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
 
-      <table class="table-auto">
-        <label class="w-1/2 font-bold p-2" for="">Username:</label>
-        <input class="w-1/2  p-2" type="text" name="task[]" value="<?php echo $this->oneTask['username']?>"><br>
+      <table class="card">
+        <label class="w-1/2 font-bold" for="">Username:</label> 
         
-        <label class="w-1/2 font-bold p-2" for="">Task Description:</label>
-        <input type="text" name="task[]" value="<?php echo $this->oneTask['taskDescription']?>"><br>
+        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['username']?>">
+
         
-        <label class="w-1/2 font-bold p-2" for="">Status:</label>
-        <input type="text" name="task[]" value="<?php echo $this->oneTask['status']?>"><br>
+        <label class="w-1/2 font-bold" for="">Task Description:</label>
 
-        <label class="w-1/2 font-bold p-2" for="">Starter Date:</label>
-        <input type="text" name="task[]" value="<?php echo $this->oneTask['starterDate']?>"><br>
+        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['taskDescription']?>">
 
-        <label class="w-1/2 font-bold p-2" for="">Final Date:</label>
-        <input type="text" name="task[]" value="<?php echo $this->oneTask['finalDate']?>">
+        
+        <label class="w-1/2 font-bold" for="">Status:</label>
 
-        <button type="submit">Enviar</button>
+        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['status']?>">
+
+        <label class="w-1/2 font-bold" for="">Starter Date:</label>
+
+        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['starterDate']?>">
+
+        <label class="w-1/2 font-bold" for="">Final Date:</label>
+        
+        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['finalDate']?>"> 
+        <br>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit">Enviar</button>
       </table>
 
     </form>
 
   </div> 
 </div>
+
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>

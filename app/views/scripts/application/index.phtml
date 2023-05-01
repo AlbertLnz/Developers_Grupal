@@ -1,5 +1,5 @@
 <?php include dirname(__DIR__).'\..\layouts\header.php';?>
-<div class="container my-24 px-6 mx-auto">
+<div class="container my-6 px-6 mx-auto">
   <div class="flex flex-col">
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -15,6 +15,12 @@
                     <th class=w-1/6>Actions</th>
                   </tr>
                 </thead>
+
+                 <form action="addTask" method="POST">
+                    <input type="hidden" name="task" value="">
+                     <button class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-2xl px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                      Add Task</button>
+                  </form>
 
                 <tbody class="text-center">
                   <?php foreach ($this->allTasks as $task): ?>
@@ -65,10 +71,7 @@
   </div> 
 </div>
 
-  <form action="addTask" method="POST">
-    <input type="hidden" name="task" value="">
-    <button class="bg-blue-300">Add Task</button>
-  </form>
+  
 
 
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>
