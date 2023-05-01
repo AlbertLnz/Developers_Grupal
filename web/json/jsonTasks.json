@@ -33,9 +33,9 @@
     },
     {
         "id": 5,
-        "username": " Francisco Farrando",
+        "username": "Francisco Farrando",
         "taskDescription": "Groceries",
-        "status": "Executed",
+        "status": "Executing",
         "starterDate": "01\/05\/2023",
         "finalDate": "10\/06\/2023"
     }
