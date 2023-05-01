@@ -3,7 +3,7 @@
         "id": 1,
         "username": "Rebecca Hoffmann Grosso",
         "taskDescription": "Do the Developers!",
-        "status": "Finished",
+        "status": "Pending",
         "starterDate": "01\/05\/2023",
         "finalDate": "22\/05\/2023"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "username": "Joan Coll",
         "taskDescription": "Go to mall",
-        "status": "Pending",
+        "status": "Executing",
         "starterDate": "07\/12\/2022",
         "finalDate": "17\/08\/2023"
     },

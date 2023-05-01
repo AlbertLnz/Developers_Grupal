@@ -19,17 +19,17 @@ Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actuali
       <table class="card">
         <label class="w-1/2 font-bold" for="">Username:</label> 
         
-        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['username']?>">
+        <input type="text" name="task[]" class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['username']?>">
 
         
         <label class="w-1/2 font-bold" for="">Task Description:</label>
 
-        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['taskDescription']?>">
+        <input type="text" name="task[]" class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['taskDescription']?>">
 
         
         <label class="w-1/2 font-bold" for="">Status:</label>
 
-        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="task[]" id="">
+        <select class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="task[]" id="">
           <option value="Pending" <?php echo $this->oneTask['status']=="Pending" ? "selected": "" ?>>Pending</option>
           <option value="Executing" <?php echo $this->oneTask['status']=="Executing" ? "selected": "" ?> >Executing</option>
           <option value="Finished" <?php echo $this->oneTask['status']=="Finished" ? "selected": "" ?>>Finished</option>
