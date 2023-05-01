@@ -5,7 +5,7 @@
     protected $id;
     protected $username;
     protected $taskDescription;
-    protected $status;
+    private $status;
     protected $starterDate;
     protected $finalDate;
 

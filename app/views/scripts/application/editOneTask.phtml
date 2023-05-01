@@ -29,8 +29,12 @@ Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actuali
         
         <label class="w-1/2 font-bold" for="">Status:</label>
 
-        <input type="text" name="task[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['status']?>">
-
+        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="task[]" id="">
+          <option value="Pending" <?php echo $this->oneTask['status']=="Pending" ? "selected": "" ?>>Pending</option>
+          <option value="Executing" <?php echo $this->oneTask['status']=="Executing" ? "selected": "" ?> >Executing</option>
+          <option value="Finished" <?php echo $this->oneTask['status']=="Finished" ? "selected": "" ?>>Finished</option>
+        </select>
+        
         <label class="w-1/2 font-bold" for="">Starter Date:</label>
 
         
