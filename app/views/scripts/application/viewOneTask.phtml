@@ -3,8 +3,52 @@
 
 <?php 
 
-print_r($this->oneTask);
+/*print_r($this->oneTask);*/
 
 ?>
+
+
+<div class="container my-24 px-6 mx-auto">
+  <div class="w-full p-4 text-left bg-gray border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    Informacion de: <div class="text-6xl font-bold my-2" ><?php echo $this->oneTask['username']?>
+  </div>
+  <div class="w-full p-4 text-left bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+
+    
+    <table class="table-fixed">
+        <tbody >
+            <tr>
+                <th > Username:</th>
+                
+                <td class="text-right" ><?php echo $this->oneTask['username']?> </td>
+            </tr>
+            <tr>
+                <th> Task Description:</th>
+                
+                <td class="text-right" ><?php echo $this->oneTask['taskDescription']?> </td>
+            </tr>
+            <tr>
+                <th> Status:</th>
+                
+                <td class="text-right" ><?php echo $this->oneTask['status']?> </td>
+            </tr>
+            <tr>
+                <th> Starter Date:</th>
+                
+                <td class="text-right" ><?php echo $this->oneTask['starterDate']?> </td>
+            </tr>
+            <tr>
+                <th> Final Date:</th>
+                
+                <td class="text-right" ><?php echo $this->oneTask['finalDate']?> </td>
+            </tr>
+            
+            
+        </tbody>
+
+    </table>
+
+  </div> 
+</div>
 
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>

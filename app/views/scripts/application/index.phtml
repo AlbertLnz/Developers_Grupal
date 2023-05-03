@@ -1,57 +1,77 @@
 <?php include dirname(__DIR__).'\..\layouts\header.php';?>
+<div class="container my-6 px-6 mx-auto">
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+            <table class="min-w-full text-center text-sm font-light">
+                <thead class="border-b bg-neutral-800 font-large text-white dark:border-neutral-500 dark:bg-neutral-900">
+                  <tr>
+                    <th class="w-1/6 py-4 ">Username</th>
+                    <th class=w-1/6>Task Description</th>
+                    <th class=w-1/6>Status</th>
+                    <th class=w-1/6>Starter Date</th>
+                    <th class=w-1/6>Finished Date</th>
+                    <th class=w-1/6>Actions</th>
+                  </tr>
+                </thead>
 
-<table class="w-full my-12 border border-gray-400 border-separate border-spacing-y-5 border-spacing-x-2">
+                 <form action="addTask" method="POST">
+                    <input type="hidden" name="task" value="">
+                     <button class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-2xl px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                      Add Task</button>
+                  </form>
 
-    <thead class="bg-blue-300">
-      <tr>
-        <th>Username</th>
-        <th>Task Description</th>
-        <th>Status</th>
-        <th>Starter Date</th>
-        <th>Finished Date</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
+                <tbody class="text-center">
+                  <?php foreach ($this->allTasks as $task): ?>
+                    <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-200 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                      <td class= "py-4">
+                        <?php echo $task['username']?></td>
+                      <td>
+                        <?php echo $task['taskDescription']?></td>
+                      <td>
+                        <?php echo $task['status']?></td>
+                      <td>
+                        <?php echo $task['starterDate']?></td>
+                      <td>
+                        <?php echo $task['finalDate']?></td>
+                      <td>
 
-    <tbody class="text-center">
-      <?php foreach ($this->allTasks as $task): ?>
-        <tr>
-          <td><?php echo $task['username']?></td>
-          <td><?php echo $task['taskDescription']?></td>
-          <td><?php echo $task['status']?></td>
-          <td><?php echo $task['starterDate']?></td>
-          <td><?php echo $task['finalDate']?></td>
-          <td>
-            <div class="flex grid justify-center">
-              <div class="flex">
-                <form action="viewTask" method="POST">
-                  <input type="hidden" name="task" value="<?php echo $task['id']?>">
-                  <button class="bg-lime-300 border rounded py-1 px-2 mx-2 hover:underline">View</button>
-                </form>
-              <div class="flex">
-                <form action="editTask" method="POST">
-                  <input type="hidden" name="task" value="<?php echo $task['id']?>">
-                  <button class="bg-orange-300 border rounded py-1 px-2 mx-2 hover:underline">Edit</button>
-                </form>
-              <div class="flex">
-                <form action="deleteTask" method="POST">
-                  <input type="hidden" name="task" value="<?php echo $task['id']?>">
-                  <button class="bg-red-300 border rounded py-1 px-2 mx-2 hover:underline">Delete</button>
-                </form>
-              </div>
+                        <div class="flex justify-center">
+                          <div class="flex ">
+                            <form action="viewTask" method="POST">
+                              <input type="hidden" name="task" value="<?php echo $task['id']?>">
+                              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 border border-gray-700 rounded mx-2">View</button>
+                            </form>
+                          <div class="flex">
+                            <form action="editTask" method="POST">
+                              <input type="hidden" name="task" value="<?php echo $task['id']?>">
+                              <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded mx-2">Edit</button>
+                            </form>
+                          <div class="flex">
+                            <form action="deleteTask" method="POST">
+                              <input type="hidden" name="task" value="<?php echo $task['id']?>">
+                              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded mx-2">Delete</button>
+                            </form>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    
+                  <?php endforeach;?> 
+              
+                </tbody>
+
+              </table>
             </div>
-          </td>
-        </tr>
-       <?php endforeach;?> 
+          </div> 
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
   
-    </tbody>
-
-  </table>
-
-  <form action="addTask" method="POST">
-    <input type="hidden" name="task" value="">
-    <button class="bg-blue-300">Add Task</button>
-  </form>
 
 
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>

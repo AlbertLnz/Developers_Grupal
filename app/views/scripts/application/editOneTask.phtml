@@ -1,33 +1,66 @@
 <?php include dirname(__DIR__).'\..\layouts\header.php';?>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
 <?php 
 /*yo te daré la tarea que en el index.phtml picas
 Lo que tu me has de enviar es la tarea modificada a para que yo la pueda actualizar a la DB*/
 ?>
 
+<div class="container my-24 px-6 mx-auto">
+  <div class="w-full p-4 text-left bg-gray border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    Editar la informacion de: <div class="text-6xl font-bold my-2" ><?php echo $this->oneTask['username']?>
+  </div>
+  <div class="w-full p-4 text-left bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 
-<form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
-  <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
 
-  <label for="">Username:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['username']?>"><br>
-  
-  <label for="">Task Description:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['taskDescription']?>"><br>
-  
-  <label for="">Status:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['status']?>"><br>
+    <form action="<?php echo WEB_ROOT?>/updateTask" method="POST">
+      <input type="hidden" name=task[] value="<?php echo $this->oneTask['id']?>">  
 
-  <label for="">Starter Date:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['starterDate']?>"><br>
+      <table class="card">
+        <label class="w-1/2 font-bold" for="">Username:</label> 
+        
+        <input type="text" name="task[]" class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['username']?>">
 
-  <label for="">Final Date:</label>
-  <input type="text" name="task[]" value="<?php echo $this->oneTask['finalDate']?>">
+        
+        <label class="w-1/2 font-bold" for="">Task Description:</label>
 
-  <button type="submit">Enviar</button>
+        <input type="text" name="task[]" class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?php echo $this->oneTask['taskDescription']?>">
 
-</form>
+        
+        <label class="w-1/2 font-bold" for="">Status:</label>
 
+        <select class="relative max-w-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="task[]" id="">
+          <option value="Pending" <?php echo $this->oneTask['status']=="Pending" ? "selected": "" ?>>Pending</option>
+          <option value="Executing" <?php echo $this->oneTask['status']=="Executing" ? "selected": "" ?> >Executing</option>
+          <option value="Finished" <?php echo $this->oneTask['status']=="Finished" ? "selected": "" ?>>Finished</option>
+        </select>
+        
+        <label class="w-1/2 font-bold" for="">Starter Date:</label>
+
+        
+        <div class="relative max-w-sm">
+             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+             </div>
+             <input datepicker datepicker-format="dd/mm/yyyy" type="text" name="task[]"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" value="<?php echo $this->oneTask['starterDate']?>">
+        </div>
+
+        <label class="w-1/2 font-bold" for="">Final Date:</label>
+        
+        <div class="relative max-w-sm">
+             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+             </div>
+             <input datepicker datepicker-format="dd/mm/yyyy" type="text" name="task[]"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" value="<?php echo $this->oneTask['finalDate']?>">
+        </div>
+        
+        <br>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit">Submit</button>
+      </table>
+
+    </form>
+
+  </div> 
+</div>
 
 <?php include dirname(__DIR__).'\..\layouts\footer.php';?>
